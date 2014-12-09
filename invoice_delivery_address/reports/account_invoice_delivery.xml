@@ -5,7 +5,7 @@
             <xpath expr="//p[@t-if='o.fiscal_position']" position="after">
                 <div class="row" name="additional_addresses_row">
                     <div    class="col-xs-4"
-                            name="delivery_address"
+                            name="delivery_address_col"
                             t-if="o.partner_shipping_id and (o.partner_shipping_id != o.partner_id)"
                     >
                         <strong>Deliver To:</strong><br/>
