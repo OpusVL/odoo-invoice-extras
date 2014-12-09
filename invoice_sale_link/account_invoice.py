@@ -40,7 +40,7 @@ class AccountInvoice(models.Model):
         if len(results) == 0:
             self.sale_order_id = False
         elif len(results) == 1:
-            self.sale_order_id = results[0][0]
+            self.sale_order_id = results[0][0]  # First field (order_id) of the first and only record
         else:
             raise ValueError("More than one sale order linked to this invoice")
 
