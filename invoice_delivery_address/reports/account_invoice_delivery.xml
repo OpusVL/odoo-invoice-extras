@@ -2,7 +2,7 @@
 <openerp>
     <data>
         <template id="report_invoice_document_extension" inherit_id="account.report_invoice_document">
-            <xpath expr="//p[@t-if='o.fiscal_position']" position="after">
+            <xpath expr="//p[@t-if='o.fiscal_position.note']" position="after">
                 <div class="row" name="additional_addresses_row">
                     <div    class="col-xs-4"
                             name="delivery_address_col"
