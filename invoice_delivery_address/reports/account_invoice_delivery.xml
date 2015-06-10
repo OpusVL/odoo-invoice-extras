@@ -10,13 +10,14 @@
                         <span t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></span>
                     </div>
                     <div class="col-xs-2" name="gap_between_addresses_col"/>
-                    <div class="col-xs-5"
-                         name="delivery_address_col"
-                         t-if="o.partner_shipping_id and (o.partner_shipping_id != o.partner_id)">
-                        <strong>Deliver To:</strong><br/>
-                        <address t-field="o.partner_shipping_id"
-                                 t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"
-                                 />
+                    <div class="col-xs-5" name="delivery_address_col">
+                        <div name="delivery_address_block"
+                             t-if="o.partner_shipping_id and (o.partner_shipping_id != o.partner_id)">
+                            <strong>Deliver To:</strong><br/>
+                            <address t-field="o.partner_shipping_id"
+                                     t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"
+                                     />
+                        </div>
                     </div>
                 </div>
             </xpath>
