@@ -34,6 +34,9 @@ class AccountInvoice(models.Model):
     @api.depends('origin')
     @api.one
     def _compute_sale_order_id(self):
+        if self.type == 'in_invoice':
+            self.sale_order_id = False
+            return
         cr = self.env.cr
         cr.execute('SELECT order_id FROM sale_order_invoice_rel WHERE invoice_id = %s', (self.id,))
         results = cr.fetchall()
