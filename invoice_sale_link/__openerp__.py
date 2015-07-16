@@ -39,6 +39,7 @@ This is designed as custom functionality.
     'depends': [
         'sale',
         'account',
+        'base',
     ],
     'data': [
     ],

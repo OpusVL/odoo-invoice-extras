@@ -35,6 +35,7 @@
     'depends': [
         'invoice_sale_link',
         'account',
+        'base',
     ],
     'data': [
         'reports/account_invoice_delivery.xml',
