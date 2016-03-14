@@ -2,7 +2,7 @@
 
 from openerp import models, fields, api
 
-class SaleOrderLine(models.Model):
+class InvoiceLine(models.Model):
     _inherit = 'account.invoice.line'
 
     description_without_sku = fields.Char(
