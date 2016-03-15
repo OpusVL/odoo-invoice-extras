@@ -21,7 +21,6 @@ class StockMove(models.Model):
         The above format was chosen to allow extension to add more lot and quant data
         to reports later.
         """
-        
         counts = {}
         for quant in self.quant_ids.filtered('lot_id'):
             lot_name = quant.lot_id.name
