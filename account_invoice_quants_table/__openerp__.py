@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "quants_table method on account.invoice.line",
+    'name': "lots_table method on account.invoice.line",
 
     'summary': """
-        Adds a new quants table method to account.invoice.line
+        Adds a new lots_table method to account.invoice.line
     """,
 
     'description': """
-        Long description of module's purpose
+        A convenience method for summarising the lots that have been
+        shipped along with invoice lines.
     """,
 
     'author': "OpusVL",
