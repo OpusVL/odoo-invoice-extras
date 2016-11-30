@@ -20,9 +20,10 @@
 #
 ##############################################################################
 
-from . import (
-    account_invoice,
-    account_invoice_refund_oldapi,
-)
+from openerp import fields, models
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+
+class AccountInvoice(models.Model):
+    _inherit="account.invoice"
+ 
+    refund_created = fields.Boolean(default=False)
