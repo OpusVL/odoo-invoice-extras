@@ -18,3 +18,6 @@ This links back to an original sales order from an invoice, if that invoice was 
 from a sales order or from a delivery order that was in turn generated from a sales order.
 
 It exposes the link table that Odoo holds internally, for use in reports.
+
+## hide\_refund\_invoice\_if\_refunded
+Small tweak to hide the 'Refund Invoice' button once an invoice has already been Refunded.

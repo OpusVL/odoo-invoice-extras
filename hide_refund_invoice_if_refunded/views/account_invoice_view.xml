@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="invoice_form_view_refund_hidden">
+            <field name="name">account.invoice.form.refund_hidden</field>
+            <field name="model">account.invoice</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_due']" position="after">
+                    <field name="refund_created" invisible="1"/>
+                </xpath>
+                <!--
+                Allowed to use OR operator here due to the concatenation Odoo provides.
+                This actually resolves to:
+                {'invisible': ['|', ('refund_created', '=', True), ('state', 'in', ['open','proforma2','paid'])]}
+                -->
+                <xpath expr="//button[@string='Refund Invoice']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', ('refund_created', '=', True)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
