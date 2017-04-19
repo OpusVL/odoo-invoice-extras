@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_sale_advance_payment_inv_advance_fix" model="ir.ui.view">
+            <field name="name">Invoice Order Advance Fix</field>
+            <field name="model">sale.advance.payment.inv</field>
+            <field name="inherit_id" ref="sale.view_sale_advance_payment_inv"/>
+            <field name="arch" type="xml">
+                <field name="product_id" position="attributes">
+                    <!-- Extend the wizard view to show the product_id field
+                        when we have 'percentage' selected -->
+                    <attribute name="attrs">
+                        {'invisible': [('advance_payment_method','not in',['fixed', 'percentage'])]}
+                    </attribute>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
