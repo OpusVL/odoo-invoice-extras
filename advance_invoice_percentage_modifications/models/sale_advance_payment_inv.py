@@ -38,3 +38,15 @@ class SaleAdvancePayementInv(models.TransientModel):
             product = self.env['product.product'].browse(product_id)
             return {'value': {'amount': product.list_price}}
         return {'value': {'amount': 0}}
+
+
+    @api.multi
+    def _prepare_advance_invoice_vals(self):
+        """Inherit the prep func to pass in our flag
+        Note that this func is called when 'Percentage' is selected on the
+        Invoice Creation wizard
+        """
+        res = super(SaleAdvancePayementInv, self)._prepare_advance_invoice_vals()
+        for k, v in res:
+            v['advance_inv_flag'] = True
+        return res

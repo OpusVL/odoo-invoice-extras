@@ -20,32 +20,12 @@
 #
 ##############################################################################
 
+from openerp import models, fields
 
-{
-    'name': 'Advance Invoice Percentage Modifications',
-    'version': '0.1',
-    'author': 'OpusVL',
-    'website': 'http://opusvl.com/',
-    'summary': '',
-    'category': '',
-    'description': 'Re-uses the feature of Advance Product when Percentage option is selected on an invoice from a sales order, which is then put in the invoice lines',
-    'images': [
-    ],
-    'depends': [
-        'sale',
-    ],
-    'data': [
-        'views/account_invoice_view.xml',
-        'views/sale_advance_payment_inv_view.xml',
-    ],
-    'demo': [
-    ],
-    'test': [
-    ],
-    'license': 'AGPL-3',
-    'installable': True,
-    'auto_install': False,
 
-}
+class AccountInvoice(models.Model):
+    _inherit = "account.invoice"
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+    advance_inv_flag = fields.Boolean(default=False, string="Advance Invoice",
+        help="Displays whether the Invoice was created as an advance invoice, or not"
+    )

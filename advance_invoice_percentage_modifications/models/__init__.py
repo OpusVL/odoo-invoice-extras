@@ -21,6 +21,7 @@
 ##############################################################################
 
 from . import (
+    account_invoice,
     sale_advance_payment_inv,
 )
 

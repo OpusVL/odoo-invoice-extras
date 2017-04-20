@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="invoice_form_advance_flag" model="ir.ui.view">
+            <field name="name">account.invoice.form.advance_flag</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <!-- Renaming of the customer invoice/refund line string -->
+                <field name="fiscal_position" position="after">
+                    <field name="advance_inv_flag"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
