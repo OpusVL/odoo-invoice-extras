@@ -27,5 +27,6 @@ class AccountInvoice(models.Model):
     _inherit = "account.invoice"
 
     advance_inv_flag = fields.Boolean(default=False, string="Advance Invoice",
-        help="Displays whether the Invoice was created as an advance invoice, or not"
+        help="Displays whether the Invoice was created as an advance invoice, or not",
+        readonly=True,
     )
