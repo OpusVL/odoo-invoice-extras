@@ -10,7 +10,10 @@
                     <!-- Extend the wizard view to show the product_id field
                         when we have 'percentage' selected -->
                     <attribute name="attrs">
-                        {'invisible': [('advance_payment_method','not in',['fixed', 'percentage'])]}
+                        {
+                        'invisible': [('advance_payment_method','not in',['fixed', 'percentage'])],
+                        'required': [('advance_payment_method', 'in', ['fixed', 'percentage'])],
+                        }
                     </attribute>
                 </field>
             </field>
