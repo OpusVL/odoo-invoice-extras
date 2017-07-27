@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="partner_view_buttons_supplier_invoice">
+            <field name="name">partner.view.buttons.supplier.invoice</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="priority" eval="20"/>
+            <field name="groups_id" eval="[(4, ref('account.group_account_invoice'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='buttons']" position="inside">
+                    <button type="action"
+                        class="oe_stat_button"
+                        id="supplier_invoice_button"
+                        name="%(account.action_invoice_refund_out_tree)d"
+                        icon="fa-pencil-square-o"
+                        attrs="{'invisible': [('supplier', '=', False)]}"
+                        context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">
+                        <div><strong><field name="supplier_total_invoiced" widget="monetary"/></strong><br/>Supplier Invoiced</div>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
