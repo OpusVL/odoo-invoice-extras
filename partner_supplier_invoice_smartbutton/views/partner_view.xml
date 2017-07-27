@@ -13,7 +13,7 @@
                     <button type="action"
                         class="oe_stat_button"
                         id="supplier_invoice_button"
-                        name="%(account.action_invoice_refund_out_tree)d"
+                        name="%(purchase.act_res_partner_2_purchase_order)d"
                         icon="fa-pencil-square-o"
                         attrs="{'invisible': [('supplier', '=', False)]}"
                         context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">

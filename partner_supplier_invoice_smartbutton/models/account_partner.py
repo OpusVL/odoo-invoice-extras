@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 from openerp.osv import fields, osv
 
+# Generic module to add a 'Supplier Invoice Total' smart button to the partner view
+# Method takes a kwarg 'price_field' that defaults to the base Odoo field which can be used for custom cases
+
 
 class res_partner(osv.osv):
     _name = 'res.partner'
