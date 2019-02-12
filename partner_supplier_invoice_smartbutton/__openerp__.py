@@ -35,6 +35,7 @@
         'views/partner_view.xml',
     ],
     'depends': [
+        'account',
         'purchase',
     ],
     'demo': [],
