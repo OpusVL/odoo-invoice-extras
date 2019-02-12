@@ -36,6 +36,7 @@
     ],
     'depends': [
         'account',
+        'purchase',
     ],
     'demo': [],
     'test': [],
